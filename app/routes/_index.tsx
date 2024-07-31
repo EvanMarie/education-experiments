@@ -21,63 +21,53 @@ export default function Index() {
   return (
     <LayoutContainer>
       <Transition className="w-full h-full justify-center items-center">
-        <NavLinkButton to="/wikipedia" buttonText="wikimedia" />
-        <NavLinkButton to="/open-stax" buttonText="open stax" />
+        <NavLinkButton to="/wikipedia" buttonText="wikipedia" />
+        <NavLinkButton to="/smithsonian" buttonText="smithsonian" />
       </Transition>
     </LayoutContainer>
   );
 }
 
-// There are many APIs that can be used for educational purposes, covering a wide range of topics such as science, math, history, literature, and more. Here are some popular APIs that can be useful for educational applications:
+// Many of the APIs listed offer free access or educational accounts, though the exact terms and limits may vary. Here is a breakdown of the APIs with information about their free access or educational-level accounts:
 
 // ### 1. **Wolfram Alpha API**
-// - **Description**: Provides computational knowledge and answers to questions across various domains like mathematics, science, technology, history, and more.
-// - **Use Case**: Solving math problems, retrieving scientific data, generating plots, and providing detailed explanations.
+// - **Free Access**: Wolfram Alpha offers a limited free tier for API access.
+// - **Educational Accounts**: There are educational plans available that might provide more extensive access.
 // - **Website**: [Wolfram Alpha API](https://products.wolframalpha.com/api/)
 
 // ### 2. **NASA APIs**
-// - **Description**: Offers access to a vast amount of data related to space, astronomy, and planetary science.
-// - **Use Case**: Fetching images from Mars rovers, accessing satellite imagery, retrieving information about celestial events, and more.
+// - **Free Access**: NASA APIs are free to use and do not require an API key.
+// - **Educational Accounts**: Free access makes it suitable for educational purposes.
 // - **Website**: [NASA APIs](https://api.nasa.gov/)
 
 // ### 3. **OpenAI GPT-4 API**
-// - **Description**: Provides access to OpenAI's powerful language models for generating human-like text.
-// - **Use Case**: Language learning, essay writing assistance, generating educational content, and creating interactive learning tools.
+// - **Free Access**: OpenAI offers a limited free tier, but it requires an API key and has usage limits.
+// - **Educational Accounts**: OpenAI provides grants and special programs for educational and research institutions.
 // - **Website**: [OpenAI GPT-4 API](https://openai.com/product/gpt-4)
 
 // ### 4. **Google Books API**
-// - **Description**: Allows access to the Google Books database, providing information about millions of books.
-// - **Use Case**: Searching for books, retrieving book details, and accessing previews of book content.
+// - **Free Access**: Google Books API is free to use with an API key.
+// - **Educational Accounts**: No specific educational accounts, but free access is sufficient for most educational uses.
 // - **Website**: [Google Books API](https://developers.google.com/books)
 
 // ### 5. **Khan Academy API**
-// - **Description**: Provides access to educational content and resources from Khan Academy.
-// - **Use Case**: Fetching educational videos, exercises, and articles across various subjects.
+// - **Free Access**: Khan Academy API is free to use.
+// - **Educational Accounts**: Free access is designed specifically for educational purposes.
 // - **Website**: [Khan Academy API](https://api-explorer.khanacademy.org/)
 
 // ### 6. **Library of Congress API**
-// - **Description**: Provides access to a vast collection of digital resources, including books, photographs, maps, and audio recordings.
-// - **Use Case**: Accessing historical documents, researching historical events, and retrieving multimedia content.
+// - **Free Access**: The Library of Congress API is free to use.
+// - **Educational Accounts**: Free access is suitable for educational purposes.
 // - **Website**: [Library of Congress API](https://libraryofcongress.github.io/data-exploration/)
 
 // ### 7. **TED Talks API**
-// - **Description**: Allows access to the TED Talks database, including information about talks, speakers, and topics.
-// - **Use Case**: Integrating TED Talks into educational platforms, searching for talks by topic or speaker, and retrieving video URLs.
+// - **Free Access**: TED Talks API is free to use, but requires an API key.
+// - **Educational Accounts**: Free access is suitable for educational uses.
 // - **Website**: [TED Talks API](https://developer.ted.com/)
 
-// ### 8. **OpenStax API**
-// - **Description**: Provides access to free, peer-reviewed, openly licensed textbooks and educational resources.
-// - **Use Case**: Integrating OpenStax textbooks into learning management systems, accessing educational content, and providing open educational resources.
-// - **Website**: [OpenStax API](https://openstax.org/api)
-
-// ### 9. **Smithsonian Institution API**
-// - **Description**: Offers access to the Smithsonian's vast collection of artifacts, images, and research.
-// - **Use Case**: Accessing museum collections, retrieving information about historical artifacts, and integrating educational content into applications.
+// ### 8. **Smithsonian Institution API**
+// - **Free Access**: The Smithsonian Institution API is free to use.
+// - **Educational Accounts**: Free access makes it suitable for educational purposes.
 // - **Website**: [Smithsonian Institution API](https://www.si.edu/developer)
 
-// ### 10. **World Bank API**
-// - **Description**: Provides access to global development data, including economic indicators, statistics, and other information.
-// - **Use Case**: Researching economic data, analyzing development trends, and retrieving statistical information for educational purposes.
-// - **Website**: [World Bank API](https://data.worldbank.org/developers)
-
-// These APIs offer a wealth of information and can be integrated into educational platforms, applications, and websites to enhance learning experiences across various subjects.
+// All of these APIs offer free access tiers that can be utilized for educational purposes. However, usage limits and the need for API keys may vary, so it's important to review each API's documentation for specific details on access and limitations.
