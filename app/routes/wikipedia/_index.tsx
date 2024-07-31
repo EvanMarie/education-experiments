@@ -11,7 +11,7 @@ import NavContainer from "~/components/buildingBlocks/navContainer";
 import { BsHouse } from "react-icons/bs";
 import NavIconButton from "~/components/buildingBlocks/navLinkIconButton";
 import HStack from "~/components/buildingBlocks/hStack";
-import { getArticleContent, SearchResult, searchWikipedia } from "./wikimedia";
+import { getArticleContent, SearchResult, searchWikipedia } from "./wikipedia";
 
 interface LoaderData {
   searchResults: SearchResult[];
@@ -50,7 +50,7 @@ export default function Index() {
         <NavIconButton icon={BsHouse} to="/" type="smallNormal" />
         <FlexFull className="justify-center">
           <h5 className="text-col-800 lightTextShadow font-semibold">
-            Search Wikimedia
+            Search Wikipedia
           </h5>
         </FlexFull>
       </NavContainer>
