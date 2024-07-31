@@ -1,9 +1,11 @@
 import type { MetaFunction } from "@remix-run/node";
 import { NavLink } from "@remix-run/react";
 import { FaSquareGithub } from "react-icons/fa6";
+import Button from "~/components/buildingBlocks/button";
 import HStack from "~/components/buildingBlocks/hStack";
 import Icon from "~/components/buildingBlocks/icon";
 import LayoutContainer from "~/components/buildingBlocks/layoutContainer";
+import NavLinkButton from "~/components/buildingBlocks/navLinkButton";
 import Text from "~/components/buildingBlocks/text";
 import Transition from "~/components/buildingBlocks/transition";
 import VStackFull from "~/components/buildingBlocks/vStackFull";
@@ -19,7 +21,7 @@ export default function Index() {
   return (
     <LayoutContainer>
       <Transition className="w-full h-full justify-center items-center">
-        <></>
+        <NavLinkButton to="/wikimedia" buttonText="wikimedia" />
       </Transition>
     </LayoutContainer>
   );
