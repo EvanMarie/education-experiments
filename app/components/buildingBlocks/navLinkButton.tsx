@@ -114,15 +114,19 @@ export default function NavLinkButton({
       : "text-[1.5vh]";
 
   // Combine all classes and include conditional classes for disabled state
-  const combinedClasses = `${buttonClass} ${width} ${buttonHeight} ${className} ${padding} font-semibold relative transition-400 ${
+  const combinedClasses = `${buttonClass} ${width} ${buttonHeight} ${className} ${padding} font-semibold relative transition-400 hover:cursor-pointer ${
     isDisabled ? "opacity-40 cursor-not-allowed" : ""
   }`;
 
   return (
     <NavLink to={to} target={target}>
-      <Flex onClick={!isDisabled ? () => onClick : undefined} ref={ref}>
+      <Flex
+        onClick={!isDisabled ? () => onClick : undefined}
+        ref={ref}
+        className="hover:cursor-pointer"
+      >
         <HStack
-          className={combinedClasses}
+          className={`${combinedClasses} hover:cursor-pointer`}
           style={{
             transition:
               "background-color 0.4s ease-in-out, color 0.4s ease-in-out, border-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out, text-shadow 0.4s ease-in-out",

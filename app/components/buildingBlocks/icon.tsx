@@ -20,7 +20,7 @@ export default function Icon({
   icon: IconComponent,
   containerClassName = "",
   iconClassName = "",
-  hoverCursor = "hover:cursor-default",
+  hoverCursor = "hover:cursor-pointer",
   w = "w-fit",
   h = "h-fit",
   pos,
