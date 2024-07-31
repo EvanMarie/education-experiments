@@ -7,6 +7,12 @@ import Button from "~/components/buildingBlocks/button";
 import VStackFull from "~/components/buildingBlocks/vStackFull";
 import ScreenContainer from "../components/screenContainer";
 import ResultsContainer from "../components/resultsContainer";
+import FlexFull from "~/components/buildingBlocks/flexFull";
+import Text from "~/components/buildingBlocks/text";
+import HStack from "~/components/buildingBlocks/hStack";
+import InputForm from "../components/inputForm";
+import ResultCard from "../components/resultCard";
+import HTMLContainer from "../components/htmlContainer";
 
 // Define the interface for Loader Data
 interface LoaderData {
@@ -37,27 +43,20 @@ export default function Index() {
     event.preventDefault();
     navigate(`?query=${encodeURIComponent(inputValue)}`);
   };
-
+  console.log("results", results);
   return (
     <ScreenContainer>
-      <Form method="get" onSubmit={handleSubmit}>
-        <Input
-          type="text"
-          name="query"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-          className="w-30vh"
-        />
-        <Button htmlType="submit" buttonText="Search" type="smallNormal" />
-      </Form>
+      <InputForm inputValue={inputValue} setInputValue={setInputValue} />
+
       {results.length === 0 ? (
         <p>No results available. Please try a different query.</p>
       ) : (
-        <ResultsContainer   maxHeight = "max-h-[65svh]">
-          {results.map((result: SmithsonianSearchResult) => (
-            <li key={result.id} className="mb-4">
-              <h2 className="text-xl font-semibold">{result.title}</h2>
-              <p>{result.content}</p>
+        <ResultsContainer maxHeight="max-h-[85svh]">
+          {results.map((result: SmithsonianSearchResult, index: number) => (
+            <ResultCard key={index}>
+              <Text className="text-lg font-semibold">{result.title}</Text>
+              {/* <p>{result.content}</p> */}
+              <HTMLContainer content={result.content} />
               {result.thumbnail && (
                 <img
                   src={result.thumbnail}
@@ -73,7 +72,7 @@ export default function Index() {
               >
                 More Info
               </a>
-            </li>
+            </ResultCard>
           ))}
         </ResultsContainer>
       )}

@@ -14,6 +14,8 @@ import HStack from "~/components/buildingBlocks/hStack";
 import { getArticleContent, SearchResult, searchWikipedia } from "./wikipedia";
 import ScreenContainer from "../components/screenContainer";
 import ResultsContainer from "../components/resultsContainer";
+import InputForm from "../components/inputForm";
+import HTMLContainer from "../components/htmlContainer";
 
 interface LoaderData {
   searchResults: SearchResult[];
@@ -48,18 +50,7 @@ export default function Index() {
 
   return (
     <ScreenContainer>
-      <Form method="get">
-        <HStack>
-          <Input
-            className="w-30vh"
-            type="text"
-            name="query"
-            value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
-          />
-          <Button htmlType="submit" buttonText="search" type="smallNormal" />
-        </HStack>
-      </Form>
+      <InputForm inputValue={inputValue} setInputValue={setInputValue} />
       {error && <div style={{ color: "red" }}>{error}</div>}
       <Wrap className="w-full gap-y-1vh gap-x-2vh justify-evenly p-1vh">
         {searchResults.map((result: SearchResult) => (
@@ -76,10 +67,7 @@ export default function Index() {
         {articleContent && (
           <VStackFull gap="gap-2vh">
             <h2 className="text-col-800 lightTextShadow">{query}</h2>
-            <div
-              className="wikimedia-content text-2vh leading-[2.8vh]"
-              dangerouslySetInnerHTML={{ __html: articleContent }}
-            />
+            <HTMLContainer content={articleContent} />
           </VStackFull>
         )}
       </ResultsContainer>
