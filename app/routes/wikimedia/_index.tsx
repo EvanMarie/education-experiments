@@ -73,7 +73,7 @@ export default function Index() {
             </HStack>
           </Form>
           {error && <div style={{ color: "red" }}>{error}</div>}
-          <Wrap className="w-full gap-y-1vh gap-x-2vh justify-evenly">
+          <Wrap className="w-full gap-y-1vh gap-x-2vh justify-evenly p-1vh">
             {searchResults.map((result: SearchResult) => (
               <Flex
                 key={result.pageid}
@@ -85,7 +85,7 @@ export default function Index() {
             ))}
           </Wrap>
           <FlexFull className="bg-linear1op50 shadowNarrowTight">
-            <FlexFull className="p-1vh md:p-1.5vh xl:p-2vh xxl:p-3vh max-h-[65svh] overflow-y-auto overflow-x-hidden insetShadowXl hide-scrollbar">
+            <FlexFull className="p-1vh md:p-1.5vh xl:p-2vh xxl:p-3vh max-h-[65svh] overflow-y-auto overflow-x-hidden insetShadowXl hide-scrollbar border-900-md">
               {articleContent && (
                 <VStackFull gap="gap-2vh">
                   <h2 className="text-col-800 lightTextShadow">{query}</h2>
