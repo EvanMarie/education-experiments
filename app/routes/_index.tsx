@@ -6,10 +6,7 @@ import HStack from "~/components/buildingBlocks/hStack";
 import Icon from "~/components/buildingBlocks/icon";
 import LayoutContainer from "~/components/buildingBlocks/layoutContainer";
 import NavLinkButton from "~/components/buildingBlocks/navLinkButton";
-import Text from "~/components/buildingBlocks/text";
 import Transition from "~/components/buildingBlocks/transition";
-import VStackFull from "~/components/buildingBlocks/vStackFull";
-import Wrap from "~/components/buildingBlocks/wrap";
 export const meta: MetaFunction = () => {
   return [
     { title: "New Remix App" },

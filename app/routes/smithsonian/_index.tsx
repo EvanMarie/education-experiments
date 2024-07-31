@@ -2,6 +2,11 @@ import { fetchSmithsonianData, SmithsonianSearchResult } from "./smithsonian";
 import { useLoaderData, Form, useNavigate } from "@remix-run/react";
 import { LoaderFunction } from "@remix-run/node";
 import { useState } from "react";
+import Input from "~/components/buildingBlocks/input";
+import Button from "~/components/buildingBlocks/button";
+import VStackFull from "~/components/buildingBlocks/vStackFull";
+import ScreenContainer from "../components/screenContainer";
+import ResultsContainer from "../components/resultsContainer";
 
 // Define the interface for Loader Data
 interface LoaderData {
@@ -34,29 +39,21 @@ export default function Index() {
   };
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">
-        Smithsonian Search Results for "{query}"
-      </h1>
+    <ScreenContainer>
       <Form method="get" onSubmit={handleSubmit}>
-        <input
+        <Input
           type="text"
           name="query"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
-          className="border p-2 rounded w-full"
+          className="w-30vh"
         />
-        <button
-          type="submit"
-          className="mt-2 p-2 bg-blue-500 text-white rounded"
-        >
-          Search
-        </button>
+        <Button htmlType="submit" buttonText="Search" type="smallNormal" />
       </Form>
       {results.length === 0 ? (
         <p>No results available. Please try a different query.</p>
       ) : (
-        <ul>
+        <ResultsContainer   maxHeight = "max-h-[65svh]">
           {results.map((result: SmithsonianSearchResult) => (
             <li key={result.id} className="mb-4">
               <h2 className="text-xl font-semibold">{result.title}</h2>
@@ -78,8 +75,8 @@ export default function Index() {
               </a>
             </li>
           ))}
-        </ul>
+        </ResultsContainer>
       )}
-    </div>
+    </ScreenContainer>
   );
 }
