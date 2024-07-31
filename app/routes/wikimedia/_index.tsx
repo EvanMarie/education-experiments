@@ -1,8 +1,3 @@
-import {
-  searchWikipedia,
-  getArticleContent,
-  SearchResult,
-} from "~/utils/wikimedia";
 import { useState } from "react";
 import { Form, useLoaderData, useNavigate } from "@remix-run/react";
 import { LoaderFunction } from "@remix-run/node";
@@ -16,6 +11,7 @@ import NavContainer from "~/components/buildingBlocks/navContainer";
 import { BsHouse } from "react-icons/bs";
 import NavIconButton from "~/components/buildingBlocks/navLinkIconButton";
 import HStack from "~/components/buildingBlocks/hStack";
+import { getArticleContent, SearchResult, searchWikipedia } from "./wikimedia";
 
 interface LoaderData {
   searchResults: SearchResult[];
@@ -58,8 +54,8 @@ export default function Index() {
           </h5>
         </FlexFull>
       </NavContainer>
-      <FlexFull className="pt-4vh">
-        <VStackFull className="p-1vh pt-2vh" gap="gap-3vh">
+      <FlexFull className="pt-4vh justify-center">
+        <VStackFull className="p-1vh pt-2vh max-w-[120vh]" gap="gap-3vh">
           <Form method="get">
             <HStack>
               <Input
@@ -88,15 +84,18 @@ export default function Index() {
               </Flex>
             ))}
           </Wrap>
-          <FlexFull className="p-1.5vh bg-linear1op50 shadowNarrowTight">
-            {articleContent && (
-              <VStackFull gap="gap-2vh">
-                <h2 className="text-col-800 lightTextShadow">
-                  Article Content
-                </h2>
-                <div dangerouslySetInnerHTML={{ __html: articleContent }} />
-              </VStackFull>
-            )}
+          <FlexFull className="bg-linear1op50 shadowNarrowTight">
+            <FlexFull className="p-1vh md:p-1.5vh xl:p-2vh xxl:p-3vh max-h-[65svh] overflow-y-auto overflow-x-hidden insetShadowXl hide-scrollbar">
+              {articleContent && (
+                <VStackFull gap="gap-2vh">
+                  <h2 className="text-col-800 lightTextShadow">{query}</h2>
+                  <div
+                    className="wikimedia-content text-2vh leading-[2.8vh]"
+                    dangerouslySetInnerHTML={{ __html: articleContent }}
+                  />
+                </VStackFull>
+              )}
+            </FlexFull>
           </FlexFull>
         </VStackFull>
       </FlexFull>

@@ -276,3 +276,7 @@ input[type="color"]::-webkit-color-swatch-wrapper {
 input[type="color"]::-webkit-color-swatch {
   border: none;
 }
+
+.wikimedia-content p {
+  margin: 1.5vh 0;
+}
