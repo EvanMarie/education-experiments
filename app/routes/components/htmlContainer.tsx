@@ -5,30 +5,30 @@ export default function HTMLContainer({ content }: { content: string }) {
     <div>
       <style>
         {`
-          .wikimedia-content {
+          .html-content {
             font-size: 2vh;
             line-height: 2.8vh;
             color: #333;
           }
 
-          .wikimedia-content a {
-            color: #1a73e8;
+          .html-content a {
+            color: purple;
             text-decoration: none;
           }
 
-          .wikimedia-content a:hover {
+          .html-content a:hover {
             text-decoration: underline;
           }
 
-          .wikimedia-content em {
+          .html-content em {
             font-style: italic;
           }
 
-          .wikimedia-content p {
-            margin: 0.5rem 0;
+          .html-content p {
+            margin: 1.5vh 0;
           }
 
-          .wikimedia-content img {
+          .html-content img {
             max-width: 100%;
             height: auto;
             display: block;
@@ -37,7 +37,7 @@ export default function HTMLContainer({ content }: { content: string }) {
         `}
       </style>
       <div
-        className="wikimedia-content"
+        className="html-content"
         dangerouslySetInnerHTML={{ __html: content }}
       />
     </div>

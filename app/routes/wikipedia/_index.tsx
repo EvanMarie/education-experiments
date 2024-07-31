@@ -66,7 +66,7 @@ export default function Index() {
       <ResultsContainer>
         {articleContent && (
           <VStackFull gap="gap-2vh">
-            <h2 className="text-col-800 lightTextShadow">{query}</h2>
+            <h3 className="text-col-800 lightTextShadow">{query}</h3>
             <HTMLContainer content={articleContent} />
           </VStackFull>
         )}
